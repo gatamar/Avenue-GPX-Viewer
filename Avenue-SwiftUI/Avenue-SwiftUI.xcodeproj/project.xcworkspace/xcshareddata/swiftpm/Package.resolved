@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "coregpx",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/gatamar/CoreGPX",
+      "state" : {
+        "branch" : "master",
+        "revision" : "7ba4a240a9dfa20e0a2746febc7afdb972f49f78"
+      }
+    }
+  ],
+  "version" : 2
+}
