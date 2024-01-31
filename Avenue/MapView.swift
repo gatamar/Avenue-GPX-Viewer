@@ -18,6 +18,7 @@ class MapView: MKMapView {
     
     private var trackLength = 0.0
     private var trackDuration = 0.0
+    private var trackName = ""
     
     func loadedGPXData(_ data: Data, _ windowCon: WindowController) {
         let indicator = NSProgressIndicator(frame: self.frame)
@@ -78,6 +79,7 @@ class MapView: MKMapView {
                 
                 self.trackLength = length
                 self.trackDuration = timeInterval
+                self.trackName = fileGPX.tracks.first?.name ?? ""
                 
                 self.updateBarInfo()
 
@@ -92,6 +94,7 @@ class MapView: MKMapView {
     func updateBarInfo() {
         let timeText = self.trackDuration > 0 ? "\(ElapsedTime.getString(from: self.trackDuration))｜": ""
         if let windowController = window?.windowController as? WindowController {
+            windowController.trackName.stringValue = trackName
             windowController.barDistance.stringValue = "\(timeText)\(self.trackLength.toDistance(type: Preferences.shared.distanceUnitType))"
         }
     }

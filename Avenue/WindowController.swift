@@ -12,6 +12,7 @@ class WindowController: NSWindowController {
     
     @IBOutlet weak var barTitle: NSTextField!
     @IBOutlet weak var barDistance: NSTextField!
+    @IBOutlet weak var trackName: NSTextField!
     @IBOutlet weak var fileImageView: DraggableImageView!
     
     private var dropDownIndex = [String : Int]() // filePath : idx
